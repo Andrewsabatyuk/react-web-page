@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import {Button} from './Button'
-import './Navbar.css'
+import {Button} from './Button';
+import { Link } from 'react-router-dom';
+import './Navbar.css';
 
-const Navbar = () => {
+function Navbar()  {
 const [click, setClick] = useState(false);
 const [button, setButton] = useState(true);
 
@@ -27,17 +28,17 @@ return (
 	<>
 		<nav className='navbar'>
 			<div className='navbar-container'>
-				<a href='#' className='navbar-logo' onClick={closeMobileMenu}>
+			<Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
 					TRVL <i class='fab fa-typo3' />
-				</a>
+				</Link>
 				<div className='menu-icon' onClick={handleClick}>
 					<i className={click ? 'fas fa-times' : 'fas fa-bars'} />
 				</div>
 				<ul className={click ? 'nav-menu active' : 'nav-menu'}>
 					<li className='nav-item'>
-						<a href='#' className='nav-links' onClick={closeMobileMenu}>
+						<Link to='/' className='nav-links' onClick={closeMobileMenu}>
 							Home
-						</a>
+						</Link>
 					</li>
 					<li className='nav-item'>
 						<a
@@ -58,13 +59,13 @@ return (
 						</a>
 					</li>
 					<li className='nav-item'>
-						<a
-							href='sign-up'
+						<Link
+							to='sign-up'
 							className='nav-links-mobile'
 							onClick={closeMobileMenu}
 						>
 							Sign-Up
-						</a>
+						</Link>
 					</li>
 				</ul>
 				{button && <Button buttonStyle='btn-outline'>SIGN-UP</Button>}
