@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {Button} from './Button'
 import './Navbar.css'
 
@@ -16,13 +16,18 @@ const showButton =() =>{
 		setButton(true)
 	}
 }
+
+useEffect(() =>{
+	showButton()
+}, [])
+
 window.addEventListener('resize', showButton)
 
 return (
 	<>
 		<nav className='navbar'>
 			<div className='navbar-container'>
-				<a href='#' className='navbar-logo'>
+				<a href='#' className='navbar-logo' onClick={closeMobileMenu}>
 					TRVL <i class='fab fa-typo3' />
 				</a>
 				<div className='menu-icon' onClick={handleClick}>
