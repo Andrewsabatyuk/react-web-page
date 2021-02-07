@@ -1,12 +1,13 @@
 import React from 'react';
 import {Button} from './Button';
 import './MainSection.css';
-import '../App.css'
+import '../App.css';
+import Video from '../videos/video-1.mp4'
 
 function MainSection() {
   return (
     <div className='main-container'>
-      {/* <video src='../videos/video-1.mp4' autoPlay loop muted /> */}
+      <video src={Video} autoPlay loop muted />
       <h1>ADVENTURE AWAITS</h1>
       <p>What are you waiting for?</p>
       <div className='main-btns'>
